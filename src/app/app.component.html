@@ -1,0 +1,84 @@
+<div
+  class="container"
+  style="
+    background-color: #dfe1e3;
+    max-width: 1932px !important;
+    height: 1894px !important;
+  "
+>
+  <div class="">
+    <!-- First Row (Header) -->
+    <div class="row header">
+      <div class="col-12">
+        <!-- Content for the header -->
+        <div class="content p-2"><app-header></app-header></div>
+      </div>
+    </div>
+
+    <!-- Second Row (Two Columns) -->
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-6 colone">
+        <!-- Left Column Content -->
+        <div class="m-4">
+          <mat-card style="max-width: 868.31px; height: 313px">
+            <mat-card-content>
+              <app-reservations></app-reservations>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <div class="col-6">
+        <!-- Right Column Content -->
+        <div class="row">
+          <!-- First Sub-Row (Upper Half) -->
+          <div class="col-12">
+            <!-- Content for the upper half -->
+            <div class="content">
+              <mat-card>
+                <mat-card-content>
+                  <div class="row">
+                    <div class="col d-flex justify-content-end">
+                      <app-name></app-name>
+                    </div>
+
+                    <div class="col-2 d-flex justify-content-end">
+                      <app-image></app-image>
+                    </div>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+          <!-- Second Sub-Row (Lower Half) -->
+          <div class="col-12 coltwo">
+            <!-- Content for the lower half -->
+            <div class="row content">
+              <div class="col">
+                <mat-card>
+                  <mat-card-content>
+                    <app-resource-type></app-resource-type>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Row (Fill the Rest) -->
+    <div class="row header">
+      <div class="col-12">
+        <!-- Content for the third row -->
+        <div class="">
+          <mat-card style="max-width: 1760px; height: 1050px;">
+            <mat-card-content
+              ><app-working-hours></app-working-hours
+            ></mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

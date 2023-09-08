@@ -1,0 +1,39 @@
+.employee-profile {
+  margin-top: 20px;
+}
+
+.upload-icon {
+  width: 10px;
+  height: 10px;
+}
+
+.upload-button {
+  display: inline;
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  padding: 5px 10px;
+  border-radius: 90%;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.upload-button span {
+  margin-right: 10px;
+}
+
+#fileInput {
+  display: none;
+}
+
+.image-preview {
+  width: 100px;
+  height: 124px;
+}
+
+.image-preview img {
+  max-width: 100px;
+  border-radius: 30%;
+  border: 1px solid #737373;
+}

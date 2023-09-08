@@ -1,0 +1,94 @@
+<!-- reservation.component.html -->
+<!-- <div class="reservation">
+    <h3>Reservations</h3>
+    <div *ngFor="let slot of timeSlots">
+      <input type="checkbox" [(ngModel)]="slot.selected" [disabled]="!slot.enabled">{{ slot.time }}
+    </div>
+    <button (click)="showSelectedReservations()">Reserve</button>
+    <div>Number of Reservations: {{ selectedReservations }}</div>
+  </div> -->
+
+<div class="row">
+  <div class="col d-flex">
+    <mat-form-field>
+      <mat-select>
+        <mat-option *ngFor="let dur of duration" [value]="dur.value">
+          <div *ngIf="dur.viewValue">
+            {{ dur.viewValue }}
+          </div>
+          <div *ngIf="!dur.viewValue">{{ dur.viewValue[1] }}</div>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <form class="example-form" style="opacity: 0.5">
+      <mat-form-field class="">
+        <mat-label>المورد متاح إلى</mat-label>
+        <input matInput type="number" />
+      </mat-form-field>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div
+    class="col d-flex justify-content-center align-items-center"
+    style="background-color: #f6f2f2; width: 287.64px; height: 54.92px"
+  >
+    <div class="row">
+      <div class="col">
+        <button
+          style="background-color: #0771de; border-radius: 30%; color: white"
+          (click)="decrement()"
+        >
+          -
+        </button>
+      </div>
+      <div class="col">
+        <span>{{ counterValue }}دقيقه</span>
+      </div>
+      <div class="col">
+        <button
+          style="background-color: #0771de; border-radius: 30%; color: white"
+          (click)="increment()"
+        >
+          +
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <p class="d-flex justify-content-end">وقت المورد</p>
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">وقت الخدمة</mat-radio-button>
+      <mat-radio-button value="2">الوقت ثابت</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+<div class="row d-flex">
+  <div class="col">
+    <form class="example-form">
+      <mat-form-field class="py-3">
+        <mat-label>50 موعد</mat-label>
+        <input matInput type="number" />
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="col">
+    <mat-radio-group aria-label="Select an option">
+      <div class="row">
+        <div class="col d-flex justify-content-end">
+          <mat-radio-button value="1">الحجز المتعدد</mat-radio-button>
+        </div>
+      </div>
+      <div class="row d-flex">
+        <div class="col">
+          <mat-radio-button value="2"
+            ><p>حجز اكثر من شخص لنفس الموعد</p></mat-radio-button
+          >
+        </div>
+        <div class="col-5">
+          <mat-radio-button value="1">حجز واحد فقط</mat-radio-button>
+        </div>
+      </div>
+    </mat-radio-group>
+  </div>
+</div>

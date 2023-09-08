@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-start aglin-items-end">
+        <input
+          type="file"
+          accept="image/*"
+          (change)="onFileSelected($event)"
+          id="fileInput"
+        />
+        <label for="fileInput" class="upload-button">
+          <mat-icon class="upload-icon">image</mat-icon>
+        </label>
+      </div>
+      <div class="image-preview">
+        <img [src]="imageUrl" alt="Employee Image" />
+      </div>
+    </div>
+  </div>
+</div>

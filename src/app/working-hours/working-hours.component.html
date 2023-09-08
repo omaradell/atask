@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button class="m-2" mat-stroked-button style="background-color: #0771de">
+        <!-- <p class="p-3" style="color: white">إضافة موارد جديدة</p> -->
+        <div style="color: white">إعدادات تقليدية</div>
+      </button>
+      <button class="m-2" mat-stroked-button style="color: white">
+        <!-- <p class="p-3" style="color: white">إضافة موارد جديدة</p> -->
+        <div style="color: rgba(108, 108, 108, 0.785)">إعدادات متقدمة</div>
+      </button>
+    </div>
+    <div class="col">
+      <h4 class="d-flex justify-content-end">حدد مواعيد العمل للمورد</h4>
+      <p></p>
+      تكوين إعدادات الأسبوع الخاص بك هنا. ما عليك سوى تحريك أشرطة التمرير وإضافة
+      / إزالة أوقات الراحة لإعداد ساعات العمل.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-slide-toggle> السبت </mat-slide-toggle>
+      <div class="col"><div class="day" *ngFor="let day of days">
+        <mat-slide-toggle [checked]="day.isWorking" class="p-3"></mat-slide-toggle>
+        <div>{{ day.name }}</div>
+        <input class="px-5" type="time" [(ngModel)]="day.startTime" />
+        <input class="px-5" type="time" [(ngModel)]="day.endTime" />
+
+        <timepicker [(ngModel)]="day.startTime"></timepicker>
+        <timepicker [(ngModel)]="day.endTime"></timepicker>
+        <button
+          mat-mini-fab
+          disabled
+          aria-label="Example icon button with a plus icon"
+        >
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="add"
+          ></mat-icon>
+        </button>
+        <button
+          mat-mini-fab
+          disabled
+          aria-label="Example icon button with a copy icon"
+        >
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="file_copy"
+          ></mat-icon>
+        </button>
+      </div>
+      <mat-slide-toggle> الجمعة </mat-slide-toggle>
+</div>
+      
+      <button (click)="saveWorkingHours()">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- <mat-slide-toggle [checked]="isSlideChecked" (change)="toggleChanges($event)">isSlideChecked: {{isSlideChecked}}</mat-slide-toggle>
+
+<p *ngFor="let e of toggleEvents">{{e}}</p> -->
